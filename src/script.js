@@ -28,7 +28,7 @@ const scene = new THREE.Scene()
  * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 'blue', 'wireframe': false })
+const material = new THREE.MeshBasicMaterial({ color: '#fff', 'wireframe': false })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
@@ -41,7 +41,15 @@ gui
     .name('blue cube y')
 
 gui
+    .add(mesh.scale, 'x')
+    .min(1)
+    .max(10)
+    .step(0.01)
+    .name('blue cube scale')
+
+gui
     .add(mesh, 'visible')
+
 
 gui
     .add(material, 'wireframe')
